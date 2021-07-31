@@ -1,25 +1,38 @@
-import logo from './logo.svg';
+import React, { Suspense, useState } from 'react';
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+
+import SideMenu from './layout/Sidebar/SideMenu';
+import { menuItems } from './layout/Sidebar/options';
+
+import { Spin } from 'antd';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [inactive, setInactive] = useState(false);
+
+	return (
+		<div className='App'>
+			<Router>
+				<SideMenu
+					onCollapse={(inactive) => {
+						console.log(inactive);
+						setInactive(inactive);
+					}}
+				/>
+				<Suspense fallback={<Spin size='large' />}>
+					<div className={`container ${inactive ? 'inactive' : ''}`}>
+						{menuItems.map((menu, index) => (
+							<div key={index}>
+								<Route key={menu.name} exact={menu.exact} path={menu.to}>
+									<menu.component />
+								</Route>
+							</div>
+						))}
+					</div>
+				</Suspense>
+			</Router>
+		</div>
+	);
 }
 
 export default App;
