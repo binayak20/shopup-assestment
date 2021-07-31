@@ -17,10 +17,6 @@ export const menuItems = [
 		to: `/calender`,
 		iconClassName: 'bi bi-speedometer2',
 		component: Demo,
-		// subMenus: [
-		// 	{ name: 'Courses', to: '/content/courses' },
-		// 	{ name: 'Videos', to: '/content/videos' },
-		// ],
 	},
 	{
 		name: 'Teachers',
@@ -34,10 +30,6 @@ export const menuItems = [
 		to: `/course`,
 		iconClassName: 'bi bi-speedometer2',
 		component: Demo,
-		// subMenus: [
-		// 	{ name: 'Courses', to: '/content-2/courses' },
-		// 	{ name: 'Videos', to: '/content-2/videos' },
-		// ],
 	},
 	{
 		name: 'Attendance',
