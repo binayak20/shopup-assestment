@@ -1,4 +1,4 @@
-import React, { useEffect, useState, lazy } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import MenuItem from './MenuItem';
 import { menuItems } from './options';
@@ -7,59 +7,6 @@ import { menuItems } from './options';
  * @author
  * @function SideMenu
  **/
-
-// const Hello = lazy(() => import('../../components/Hello'));
-
-// export const menuItems = [
-// 	{
-// 		name: 'Dashboard',
-// 		exact: true,
-// 		to: '/',
-// 		iconClassName: 'bi bi-speedometer2',
-// 		component: Hello,
-// 	},
-// 	{
-// 		name: 'Calender',
-// 		exact: true,
-// 		to: `/calender`,
-// 		iconClassName: 'bi bi-speedometer2',
-// 		component: Hello,
-// 		// subMenus: [
-// 		// 	{ name: 'Courses', to: '/content/courses' },
-// 		// 	{ name: 'Videos', to: '/content/videos' },
-// 		// ],
-// 	},
-// 	{
-// 		name: 'Teachers',
-// 		to: `/teachers`,
-// 		iconClassName: 'bi bi-vector-pen',
-// 		component: Hello,
-// 	},
-// 	{
-// 		name: 'Course',
-// 		exact: true,
-// 		to: `/course`,
-// 		iconClassName: 'bi bi-speedometer2',
-// 		component: Hello,
-// 		// subMenus: [
-// 		// 	{ name: 'Courses', to: '/content-2/courses' },
-// 		// 	{ name: 'Videos', to: '/content-2/videos' },
-// 		// ],
-// 	},
-// 	{
-// 		name: 'Attendance',
-// 		to: `/attendance`,
-// 		iconClassName: 'bi bi-vector-pen',
-// 		component: Hello,
-// 	},
-// 	{
-// 		name: 'Assignment',
-// 		to: `/assignment`,
-// 		iconClassName: 'bi bi-vector-pen',
-// 		component: Hello,
-// 	},
-// ];
-
 const SideMenu = (props) => {
 	const [inactive, setInactive] = useState(false);
 
@@ -96,9 +43,6 @@ const SideMenu = (props) => {
 	return (
 		<div className={`side-menu ${inactive ? 'inactive' : ''}`}>
 			<div className='top-section'>
-				{/* <div className='logo'>
-					<img src={logo} alt='webscript' />
-				</div> */}
 				<div onClick={() => setInactive(!inactive)} className='toggle-menu-btn'>
 					{inactive ? (
 						<i className='bi bi-arrow-right-square-fill'></i>
@@ -107,8 +51,6 @@ const SideMenu = (props) => {
 					)}
 				</div>
 			</div>
-
-			{/* <div className='divider'></div> */}
 
 			<div className='main-menu'>
 				<ul>
